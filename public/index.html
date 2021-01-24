@@ -62,9 +62,12 @@
           source: 'http://161.97.178.31:25461/live/38/22/33.m3u8',
           poster: 'https://hdkoora24.com/wp-content/uploads/2018/10/25D825A725D9258425D825A825D825AF25D825B1.jpg',
           watermark: "https://g.top4top.io/p_1829fm8sf1.png", 
-          position: 'top-right',
+          position: 'top-right 60%',
           wdigt : '100%',
           autoPlay: true,
+          plugins: [DashShakaPlayback],
+          //plugins: {playback: [YoutubePlayback]},
+          //plugins: [DashShakaPlayback,YoutubePlayback],
           height: 360,
           width: 640
         });
