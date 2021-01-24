@@ -5,18 +5,9 @@
   <script type="text/javascript" charset="utf-8" src="j/clappr.js"></script>
   <script type="text/javascript" charset="utf-8" src="j/main.js"></script>
   <script type="text/javascript" charset="utf-8" src="j/editor/ace.js"></script>
-  <link href="video.js/video-js.css" rel="stylesheet">
-  <script src="video.js/video.js"></script>
-  <script>
-    videojs.options.flash.swf = "/video.js/video-js.swf"
-  </script>
-  <!-- <script src="../videojs.watermark.js"></script> -->
-  <!-- For debugging -->
-  <script type="text/javascript" charset="utf-8" src="j/videojs.watermark.js"></script>
   <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="stylesheets/bootstrap-theme.min.css" type="text/css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="stylesheets/videojs.watermark.css" type="text/css" media="screen" charset="utf-8">
   <link rel="shortcut icon" type="image/png" href="i/favico.png">
   <script>
     window.clappr = window.clappr || {}
@@ -64,17 +55,21 @@
       </div>
     </div>
     <div class="sidebar">
-      <div id="editor">var playerElement = document.getElementById("player-wrapper");
+      <div id="editor">
+        var playerElement = document.getElementById("player-wrapper");
+        
+        var player = new Clappr.Player({
+          source: 'http://161.97.178.31:25461/live/38/22/33.m3u8',
+          poster: 'https://hdkoora24.com/wp-content/uploads/2018/10/25D825A725D9258425D825A825D825AF25D825B1.jpg',
+          watermark: "https://g.top4top.io/p_1829fm8sf1.png", 
+          position: 'top-right',
+          wdigt : '100%',
+          autoPlay: true,
+          height: 360,
+          width: 640
+        });
 
-var player = new Clappr.Player({
-  source: 'http://clappr.io/highline.mp4',
-  poster: 'http://clappr.io/poster.png',
-  mute: true,
-  height: 360,
-  width: 640
-});
-
-player.attachTo(playerElement);
+        player.attachTo(playerElement);
       </div>
       <button class="run btn btn-primary">Run</button>
       <div id="console"> </div>
